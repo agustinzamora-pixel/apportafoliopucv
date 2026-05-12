@@ -549,10 +549,6 @@ function renderDetail() {
   else if(!c.servicios_empresas&&c.aportes_sociales?.length)secs.push(mkSection('aporte','⭐','Aportes a la Sociedad',`${c.aportes_sociales.length}`,`<div>${c.aportes_sociales.map(a=>`<span class="tag t-yellow">${a}</span>`).join('')}</div>`));
   const linContent=c.lineas.length?collapse(c.lineas,l=>`<div class="linea-row"><span class="l-icon">${lineIcon(l)}</span><span class="l-text">${l}</span></div>`,5):`<div class="empty-row"><span class="empty-icon">🔬</span>Sin líneas registradas</div>`;
   secs.push(mkSection('lineas','🔬','Líneas de Investigación',c.lineas.length?`${c.lineas.length}`:'',linContent));
-  const tContent=c.tematicas?.length?c.tematicas.map(t=>`<span class="tag t-green">${t}</span>`).join(''):`<div class="empty-row"><span class="empty-icon">🗂️</span>Sin temáticas</div>`;
-  secs.push(mkSection('temas','🗂️','Temáticas',c.tematicas?.length?`${c.tematicas.length} temas`:'',tContent));
-  const kwContent=c.keywords?.length?collapse(c.keywords,k=>`<span class="tag t-blue">${k}</span>`,8):`<div class="empty-row"><span class="empty-icon">🏷️</span>Sin keywords</div>`;
-  secs.push(mkSection('kw','🏷️','Keywords',c.keywords?.length?`n=${c.keywords.length}`:'',kwContent));
   /* Investigadores */
   const invData=c.investigators||[];
   let invContent='';
